@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Web3 from 'web3';
+import Contract from 'web3-eth-contract';
 import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 import CrowdfundingContract from './contracts/Crowdfunding.json';
 import elon from './elon.jpg';
@@ -39,8 +40,10 @@ const App = () => {
     const web3 = new Web3(walletSDKProvider);
     setWeb3(web3);
 
+    // TODO: I think the problem lies in how I'm using the setProvider method
     // Initialize crowdfunding contract
-    const crowdfundingContractInstance = new web3.eth.Contract(
+    Contract.setProvider(walletSDKProvider);
+    const crowdfundingContractInstance = new Contract(
       CrowdfundingContract,
       CROWDFUNDING_CONTRACT_ADDRESS
     );
