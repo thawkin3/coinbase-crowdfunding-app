@@ -153,7 +153,11 @@ const App = () => {
         <>
           <p>Connected Account: {account}</p>
           <div>
-            <input type="number" id="donationAmount" defaultValue={10000} />
+            <input
+              type="number"
+              id="donationAmount"
+              defaultValue={10000000000000000}
+            />
             <label htmlFor="donationAmount">WEI</label>
             <button onClick={donateETH} id="donate" type="button">
               Donate

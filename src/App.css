@@ -17,14 +17,15 @@ body {
 }
 
 .headerImage {
-  margin-top: 100px;
-  height: 40vmin;
+  margin-top: 2rem;
+  height: 15rem;
 }
 
 button {
   font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 0.625rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 1.25rem;
   border: 1px solid grey;
   transition: 0.4s;
 }
