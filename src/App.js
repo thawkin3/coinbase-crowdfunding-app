@@ -40,9 +40,9 @@ const App = () => {
     const web3 = new Web3(walletSDKProvider);
     setWeb3(web3);
 
-    // TODO: I think the problem lies in how I'm using the setProvider method
     // Initialize crowdfunding contract
-    Contract.setProvider(walletSDKProvider);
+    const web3ForContract = new Web3(window.ethereum);
+    Contract.setProvider(web3ForContract);
     const crowdfundingContractInstance = new Contract(
       CrowdfundingContract,
       CROWDFUNDING_CONTRACT_ADDRESS
@@ -103,19 +103,17 @@ const App = () => {
 
     const donationAmount = document.querySelector('#donationAmount').value;
 
-    // TODO: This is getting the following error:
-    // "Error: The requested account and/or method has not been authorized by the user."
     const response = await crowdfundingContractInstance.methods.donate().send({
       from: account,
       value: donationAmount,
     });
+
+    console.log(response);
     setResponseMessage(
-      `Thank you for donating! Here's your receipt: ${response}`
+      `Thank you for donating! Here's your receipt: ${response.transactionHash}`
     );
   };
 
-  // NOTE: This works just fine. I assume that's because it's a static method
-  // on the smart contract that doesn't modify the smart contract's state (`call` vs. `send`).
   const getDonationBalance = async () => {
     const response = await crowdfundingContractInstance.methods
       .getBalance()
@@ -125,8 +123,6 @@ const App = () => {
     );
   };
 
-  // TODO: This is getting the following error:
-  // "Error: The requested account and/or method has not been authorized by the user."const requestRefund = async () => {
   const requestRefund = async () => {
     await crowdfundingContractInstance.methods
       .returnFunds()
