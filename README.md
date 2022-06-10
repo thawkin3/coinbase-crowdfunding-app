@@ -35,7 +35,7 @@ A simple crowdfunding app using the Coinbase Wallet SDK
 7. Click the "Compile Crowdfunding.sol" button
 8. Navigate to the "Deploy & run transactions" tab
 9. Switch the Environment to "Injected Web3"
-10. Open up MetaMask or whichever wallet you want to deploy with that has Ropsten ETH and switch to the Ropsten Network
+10. Open up Coinbase, MetaMask, or whichever wallet you want to deploy with that has Ropsten ETH and switch to the Ropsten Network
 11. Back in the Remix IDE, underneath the Environment it should now say you are connected to the Ropsten Network
 12. Click the "Deploy" button
 13. Your wallet extension should pop up asking you to approve the transaction
