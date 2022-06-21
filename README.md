@@ -18,7 +18,7 @@ A simple crowdfunding app using the Coinbase Wallet SDK
 ## Using the App
 
 1. Click the "Connect" button to connect your wallet to the app. This could be something like a Coinbase or MetaMask wallet.
-2. Once your wallet is connected, update the value in the number input to set your donation amount. The values are in WEI, the smallest denomination of ETH.
+2. Once your wallet is connected, update the value in the number input to set your donation amount. The values are in WEI, the smallest denomination of ETH. (We’ve set a minimum donation amount of 0.01 ether and a fund goal of 10 ether in the smart contract, but those values are arbitrary.)
 3. Click the "Donate" button to initiate the transaction. This will cause your wallet browser extension to pop up so that you can confirm or reject the transaction.
 4. Click the "See Total Contribution Amount" button to see how much everyone has collectively contributed so far.
 5. Click the "Request Refund" button after making a donation if you would like to cancel your donation.
