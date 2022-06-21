@@ -54,8 +54,8 @@ pragma solidity ^0.8.13;
 /*********************************/
 
 contract Crowdfunding {
-    uint256 fundGoal = 10000000000000000000; // 10 eth
-    uint256 minContribution = 10000000000000000; // 0.01 eth
+    uint256 fundGoal = 10 ether;
+    uint256 minContribution = 0.01 ether;
 
     address payable destinationWallet = payable(0x733B9052fB62C40B344584B20280F6FCcA3D628e);
 
